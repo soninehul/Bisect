@@ -42,6 +42,7 @@ const Friend = props => {
                   if (resp.data.doc) {
                     var action = userActionCreator(resp.data.doc, "AddUser");
                     store.dispatch(action);
+                    
                   } else {
                     console.log("user not found");
                   }
