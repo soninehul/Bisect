@@ -6,7 +6,7 @@ let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "splitat123@gmail.com",
-    pass: "Abbajabba@123",
+    pass: "",
   },
 });
 
@@ -34,6 +34,7 @@ const userOperation = {
         response.json({ Status: "F" });
       } else {
         response.json({ Status: "S", record: doc });
+        sendemail(userObject.email,`Dear ${userObject.username}, You have succesfully created your account on Bitwise!!!`);
       }
     });
   },
@@ -61,7 +62,7 @@ const userOperation = {
   async AddFriend(userObject, response) {
     let check = await this.Find(userObject.username);
     console.log(check);
-    //console.log(mailOptions.text);
+
     if (check) {
       userModel.findOneAndUpdate(
         { username: userObject.defaultUser },
@@ -90,14 +91,11 @@ const userOperation = {
     return userModel.findOne({ username }, function (err, doc) {
       if (err) {
         console.log(err);
-        //   return false;
       } else {
         if (doc) {
           console.log(doc);
-          // return true;
         } else {
           console.log("not Found");
-          //  return false;
         }
       }
     });

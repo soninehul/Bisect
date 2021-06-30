@@ -14,9 +14,8 @@ app.post("/signup",(req,res)=>{
 })
 
 app.post("/getData",async(req,res)=>{
-    var result =  await userOperation.Find(req.body.username);
+    let result =  await userOperation.Find(req.body.username);
 
-    // result.then((data)=>console.log("hmmmm",data));
     if(result){
         res.json({user: result});
     }else{
@@ -31,10 +30,9 @@ app.get("/getUser",(req,res)=>{
     const bearerHeader = req.headers['authorization'];
     // bearer Header or token = "bearer <token>" 
     if(typeof bearerHeader !== 'undefined'){
-      // split at the space so that we get two array one containing bearer and another token
 
       const bearer = bearerHeader.split(' ');
-    //   get token from array
+
     const bearerToken = bearer[1];
     //  console.log('this is ',bearerToken);
     jwt.verify(bearerToken,'secretkey',(err,authData)=>{
@@ -60,7 +58,7 @@ app.post('/AddFriend',(req,res)=>{
 
 app.post('/getData',(req,res)=>{
     console.log("hello",req.body);
-    // userOperation.GetData(res);
+   
 })
 
 app.post('/addExp',(req,res)=>{
