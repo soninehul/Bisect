@@ -38,10 +38,11 @@ function SlideShow() {
             key={index}
             style={{ backgroundColor }}
           ></div> */}
-        <img align="middle" className = " slide landing-logo" src={require('../images/0.png')} alt=""/>   
-        <img align="middle" className = " slide landing-logo" src={require('../images/1.png')} alt=""/>   
-        <img align="middle" className = "slide landing-logo" src={require('../images/2.png')} alt="a"/>   
-        <img align="middle" className = "slide landing-logo" src={require('../images/3.png')} alt=""/>   
+        {/* <img align="middle" className = " slide landing-logo" src={require('../images/10.png')} alt=""/>    */}
+        <img align="middle" className = " slide landing-logo" src={require('../images/11.png')} alt=""/>   
+        <img align="middle" className = "slide landing-logo" src={require('../images/12.png')} alt="a"/>   
+        <img align="middle" className = "slide landing-logo" src={require('../images/13.png')} alt=""/>   
+        <img align="middle" className = " slide landing-logo" src={require('../images/15.png')} alt=""/>   
         {/* ))} */}
       </div>
 
