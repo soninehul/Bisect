@@ -8,12 +8,21 @@
     position:fixed;top:0;right:0;left:0;z-index:1030
   }
 
-  .DashboardNav{
+  /* {
     height: 35px;
     width: 100%;
     background:#5BC5A7;
     color: white;
+  } */
+
+  .DashboardNav{
+    height: 35px;
+    width: 100%;
+    /* background:#027254; */
+    background: url(http://billr.me/images/bg.png) repeat;
+    color: white;
   }
+
 
   .DashboardNav h3{
     font-size: 15px;
@@ -42,6 +51,7 @@
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    border:none;
   }
   .Dashfloat button:focus{
     outline: none;
@@ -56,4 +66,7 @@
     background: #FF6337;
     font-size:  12px;
     margin-right: 15px;
+    text-decoration: none;
+    border:none;
+
   }

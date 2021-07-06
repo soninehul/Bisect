@@ -8,12 +8,12 @@ export const Login = (props)=>{
         <div className = "container signup">
       
         <div className = "signup-logo">
-      <img  src={require("../images/logo.png")} alt="" />
+      {/* <img  src={require("../images/logo.png")} alt="" /> */}
       </div>
 
 
       <div className = "signup-form">
-        <h3>WELCOME TO SPLITWISE</h3>
+        <h3>WELCOME TO BISECTR</h3>
         <label htmlFor="">Email address</label>
         <input id = "email" onChange = {props.input} className = "form-control" type="text"/>
 

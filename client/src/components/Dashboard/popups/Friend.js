@@ -33,7 +33,7 @@ const Friend = props => {
               takeInp.defaultUser = props.user.username;
             
               if(takeInp.username == props.user.username){
-                 alert("you can't add yourself as your Friend");
+                 alert("You can't add yourself as your Friend");
                  return;
               }
               instance
@@ -42,9 +42,9 @@ const Friend = props => {
                   if (resp.data.doc) {
                     var action = userActionCreator(resp.data.doc, "AddUser");
                     store.dispatch(action);
-                    
                   } else {
                     console.log("user not found");
+                    alert("User not found");
                   }
                 })
                 .catch(err => {

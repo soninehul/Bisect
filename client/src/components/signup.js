@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/signup.css';
+import  Header  from './Header';
 import { withRouter } from "react-router-dom";
 
 import {instance} from '../utils/AxiosConfig';
@@ -8,9 +9,10 @@ var obj = {};
    return(
    
       <div className = "container signup">
-      
+                  <Header/>
+
       <div className = "signup-logo">
-    <img  src={require("../images/logo.png")} alt=""/>
+    {/* <img  src={require("../images/logo.png")} alt=""/> */}
     </div>
 
 
