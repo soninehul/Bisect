@@ -18,9 +18,9 @@ export const Login = (props)=>{
         <input id = "email" onChange = {props.input} className = "form-control" type="text"/>
 
         <label htmlFor="">Password</label>
-        <input id = "password" onChange = {props.input} className = "form-control" type="text"/>
+        <input id = "password" onChange = {props.input} className = "form-control" type="password"/>
 
-      {props.sts && <p style = {{color: "red"}}><i class="fas fa-exclamation-circle"></i> Invalid Username or Password</p>}
+      {props.sts && <p style = {{color: "red"}}><i class="fas fa-exclamation-circle"></i> Invalid Email or Password</p>}
        <button onClick = {props.login} className = "btn">Log In</button>
      </div>
      </div>

@@ -1,6 +1,7 @@
 const userModel = require("../models/UserSchema");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
+const bcrypt =require('bcrypt');
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
@@ -40,23 +41,31 @@ const userOperation = {
   },
 
   login(userObject, response) {
-    userModel.findOne(userObject, (err, doc) => {
+    userModel.findOne({email:userObject.email},async (err, doc) => {
       if (err) {
         console.log(err);
-      } else {
-        if (doc) {
-          jwt.sign({ doc }, "secretkey", { expiresIn: "1h" }, (err, token) => {
-            response.json({
-              Status: "S",
-              msg: "welcome bro " + doc.username,
-              token: token,
-            });
+      } 
+      else {
+       // console.log(doc,"doc userObject",userObject)
+        
+        if(doc){
+          const auth=await bcrypt.compare(userObject.password,doc.password);
+         // console.log("auth ",auth);
+          if (auth) {
+            jwt.sign({ doc }, "secretkey", { expiresIn: "1h" }, (err, token) => {
+              response.json({
+                Status: "S",
+                msg: "welcome bro " + doc.username,
+                token: token,});
           });
-        } else {
-          response.json({ Status: "F", msg: "Invalid username or password" });
-        }
+          }
+          else
+            response.json({ Status: "F", msg: "Invalid password" }); }  
+        else 
+          response.json({ Status: "F", msg: "Invalid email" });
+        
       }
-    });
+    })
   },
 
   async AddFriend(userObject, response) {

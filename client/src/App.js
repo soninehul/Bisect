@@ -6,6 +6,8 @@ import { Landing } from './components/landing';
 import  SignUp  from './components/signup';
 import {Dashboard} from './containers/Dashboard';
 import  AuthComponent  from './containers/AuthComponent';
+
+
 export  class App extends React.Component{
   render(){
     return (

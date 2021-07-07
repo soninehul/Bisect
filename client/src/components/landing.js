@@ -32,7 +32,7 @@ export const Landing = ()=>{
                                 <li><i class="fas fa-check-circle"></i> &nbsp;&nbsp;Split group expenses easily.</li>
                             </ul>
 
-                            <a href="http://localhost:3000/signup">   <button className = "landing-button">  Get Started</button></a>
+                            <a href="/signup">   <button className = "landing-button">  Get Started</button></a>
                         </div>
                     </div> 
                     <div className="landing-foot">

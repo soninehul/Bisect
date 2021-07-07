@@ -9,7 +9,6 @@
 
 .bd{
   background: url(http://billr.me/images/bg2.png) repeat;
-
 }
 
 .landingNav{
@@ -21,7 +20,9 @@
 }
 
 .landing-foot{
-  height: 70px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
   /* background:#027254; */
   background: url(http://billr.me/images/bg.png) repeat;
@@ -73,7 +74,7 @@ a:hover{
   
 }
 .float label{
-  font-size:  20px;
+  font-size:  18px;
 }
 
 .landingNav h3{
@@ -86,6 +87,9 @@ a:hover{
 }
 
 .landing-heading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-top: 25px; 
 }
@@ -116,6 +120,7 @@ a:hover{
   width: 100%;
   height: 500px;
   display: flex;
+  justify-content: space-around;
 }
 
 
@@ -164,4 +169,50 @@ a:hover{
   font-size:large;
   cursor: pointer;
   color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  .landing{
+    display: flex;
+    align-items: center;
+  }
+  .landing-feature{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .landing h1{
+    font-size: 35px;
+  }
+  .landing p{
+    font-size: 15px;
+  }
+  .landing-name{
+    font-size:medium;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .landing-header{
+    font-size: 28px;
+  }
+
+  .landing h1{
+    font-size: 26px;
+  }
+  .landing p{
+    font-size: 10px;
+  }
+  .float label{
+    font-size:  12px;
+  }
+  .loginBtn{
+    font-size:  10px;
+  }
+  .SignUp{
+    font-size:  10px;
+  }
+  .landing-name{
+    font-size:small;
+  }
 }
